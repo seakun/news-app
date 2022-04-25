@@ -31,7 +31,6 @@ DEBUG = env.bool("DEBUG", default=False)
 
 ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -147,6 +146,6 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"  # new
 DEFAULT_FROM_EMAIL = "sean@seankung.com"
 EMAIL_HOST = "smtp.sendgrid.net"
 EMAIL_HOST_USER = "apikey"
-EMAIL_HOST_PASSWORD = "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"
+EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
